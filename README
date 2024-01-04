@@ -1,0 +1,31 @@
+README Doodle Jump
+Overview:
+
+The purpose of this program is to create a game where doodle (the rectangle that is controlled by key presses A and D)
+can jump on four different types of platforms. As the doodle jumps, score increases based off of how much the
+doodle scrolls. Once doodle reaches a certain height on the screen, the platforms scroll down, giving the illusion
+that doodle has leveled up to a new height. This program features the App class, DoodleOrganizer(to organize the panes),
+Game, Doodle, Constants, Platform, and four subclasses of Platform (MovingPlatform, ExtraBouncePlatform,
+StandardPlatform, and DisappearingPlatform). Constants is used to minimize and simplify code. The Platform has four
+subclasses because there are four different types of platforms that have slightly different functions for collide.
+We generate the four different types of platforms by using a switch method with multiple cases and a random number
+generator. Once doodle falls and goes off the screen, the game ends, the timeline stops, and the A and D keys can no
+longer be pressed. This is when "Game Over" is displayed on the screen.
+
+Design Choices:
+
+For inheritance, we decided to create one parent class called Platform and four subclasses that inherited from the
+main Platform class. This is because the platforms are still somewhat similar (size-wise), but they have different
+collide functions that need to be written individually. We created a DoodleOrganizer class to organize the panes in
+the game, then created an instance of Game in our organizer class. Game is responsible for containing the timeline,
+platform array, and doodle (basically all the elements that make up the doodle jump game). We created an arraylist
+that stored platforms and wrote the genPlatform() method in Game to set the location randomly of new platforms
+generated. We also created the method gameUpdate(), which is called in the timeline and updated constantly throughout
+the game. In gameUpdate(), we call other methods written in Game like checkCollision(), checkScroll(), and
+removePlatforms().
+
+Known Bugs:
+None
+
+Debugging Collaborators:
+Athena Deng
